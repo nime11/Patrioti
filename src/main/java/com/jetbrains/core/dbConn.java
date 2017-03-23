@@ -14,7 +14,7 @@ public class dbConn {
     private static dbConn instance = new dbConn();
     public static final String URL = "jdbc:mysql://test.cgiwnuzpgiyc.us-west-2.rds.amazonaws.com/MuDataBase";
     public static final String USER = "Lenart";
-    public static final String PASSWORD = "Aligator1";
+    public static final String PASSWORD = "ht9EYwm7kE2AURbc";
     public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
 
     //private constructor
@@ -40,7 +40,7 @@ public class dbConn {
     }
 
     public static Connection getConnection() {
-        return instance.createConnection();
+        return createConnection();
     }
 }
 
