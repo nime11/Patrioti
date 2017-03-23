@@ -121,14 +121,14 @@ public class MuGraphLayout extends HorizontalLayout {
 
 
         YAxis primary = new YAxis();
-        primary.setTitle("totaldmg");
+        primary.setTitle("Moč");
         Style style = new Style();
         style.setColor(SolidColor.RED);
         primary.getTitle().setStyle(style);
         conf.addyAxis(primary);
 
         YAxis snd = new YAxis();
-        snd.setTitle("Moč");
+        snd.setTitle("Totaldmg");
         snd.setOpposite(true);
         style = new Style();
         style.setColor(new SolidColor("#4572A7"));
