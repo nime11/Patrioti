@@ -64,9 +64,6 @@ public class ProgresGridLayout extends HorizontalLayout  {
        filter.setNumberFilter("morski_rank","smallest", "biggest");
        filter.setNumberFilter("moč","smallest", "biggest");
        filter.setNumberFilter("totaldmg","smallest", "biggest");
-
-
-
        // Freeze two first columns
        grid.setFrozenColumnCount(2);
 
