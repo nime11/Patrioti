@@ -16,7 +16,6 @@ public class dbConn {
     public static final String USER = "Lenart";
     public static final String PASSWORD = "ht9EYwm7kE2AURbc";
     public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
-
     //private constructor
     private dbConn() {
         try {
