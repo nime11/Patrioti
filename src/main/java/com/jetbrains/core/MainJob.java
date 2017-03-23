@@ -17,14 +17,14 @@ public class MainJob implements Job {
             throws JobExecutionException {
 
         // Simulate job execution for 5 seconds...
+        System.out.println("Executing job in background...");
         try {
-            System.out.println("Executing job in background...");
             FillData.povni();
-            System.out.println("Done executing job.");
-
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("Done executing job.");
+
     }
 
 }

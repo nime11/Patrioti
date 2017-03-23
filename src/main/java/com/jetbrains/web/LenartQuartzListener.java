@@ -1,6 +1,5 @@
 package com.jetbrains.web;
 
-import com.jetbrains.UI.MyUI;
 import org.quartz.SchedulerException;
 import org.quartz.ee.servlet.QuartzInitializerListener;
 import org.quartz.impl.StdSchedulerFactory;

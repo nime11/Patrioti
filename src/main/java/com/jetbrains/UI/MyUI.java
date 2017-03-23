@@ -86,8 +86,8 @@ public class MyUI extends UI{
              h = 7-i;
         }
         int m= 60-cal.get(Calendar.MINUTE)-5;
-        cal.add(Calendar.HOUR_OF_DAY, h); // adds one hour
-        cal.add(Calendar.MINUTE ,m); // adds one hour
+        cal.add(Calendar.HOUR_OF_DAY, h); // adds  hour
+        cal.add(Calendar.MINUTE ,m); // adds one minute
 
 
         requireNonNull(scheduler);

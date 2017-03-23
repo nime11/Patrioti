@@ -9,26 +9,22 @@ import com.vaadin.addon.charts.model.style.Style;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.ui.HorizontalLayout;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
  * Created by lenart on 21. 03. 2017.
  */
 public class MuGraphLayout extends HorizontalLayout {
-    Date dans = new java.util.Date();
-    Calendar c = Calendar.getInstance();
+    Date dans = new java.sql.Date(Calendar.getInstance().getTime().getTime());
     public MuGraphLayout(){
-        c.setTime(dans);
-        c.add(Calendar.DATE, -1);
-        java.sql.Date yesterday = new java.sql.Date( c.getTime().getTime());
-
-        ArrayList<Clan> clanArrayList = GetData.GetArry(yesterday);
+        dans = Date.valueOf("2017-03-19");
+        ArrayList<Clan> clanArrayList = GetData.GetArry(dans);
 
         Chart chartTotaldmg = new Chart(ChartType.PIE);
-        chartTotaldmg.setWidth("400px");
+        chartTotaldmg.setWidth("600px");
         chartTotaldmg.setHeight("400px");
 
 // Modify the default configuration a bit
@@ -54,7 +50,7 @@ public class MuGraphLayout extends HorizontalLayout {
         }
 
         confTotaldmg.addSeries(seriesTotal);
-        addComponent(chartTotaldmg);
+
         //end
 
         //new
@@ -96,7 +92,7 @@ public class MuGraphLayout extends HorizontalLayout {
 
         confDif.addSeries(seriesDif);
         confDif.setScrollbar(new Scrollbar());
-        addComponent(chartDif);
+
         //end
 
         //new
@@ -125,14 +121,14 @@ public class MuGraphLayout extends HorizontalLayout {
 
 
         YAxis primary = new YAxis();
-        primary.setTitle("Moč");
+        primary.setTitle("totaldmg");
         Style style = new Style();
         style.setColor(SolidColor.RED);
         primary.getTitle().setStyle(style);
         conf.addyAxis(primary);
 
         YAxis snd = new YAxis();
-        snd.setTitle("Totaldmg");
+        snd.setTitle("Moč");
         snd.setOpposite(true);
         style = new Style();
         style.setColor(new SolidColor("#4572A7"));
@@ -167,9 +163,8 @@ public class MuGraphLayout extends HorizontalLayout {
         conf.addSeries(seriesPtotal2);
 
         addComponent(chart);
-
-
-
+        addComponent(chartDif);
+        addComponent(chartTotaldmg);
     }
 
 

@@ -6,12 +6,12 @@
 
   <display-name>LenartScheduler</display-name>
 
-  <!-- override @VaadinServletConfiguration(productionMode = true, ui = ...) -->
-  <!--<context-param>-->
-  <!--<description>Vaadin production mode</description>-->
-  <!--<param-name>productionMode</param-name>-->
-  <!--<param-value>${productionMode}</param-value>-->
-  <!--</context-param>-->
+  //override @VaadinServletConfiguration(productionMode = true, ui = ...)
+  <context-param>
+  <description>Vaadin production mode</description>
+  <param-name>productionMode</param-name>
+  <param-value>${productionMode}</param-value>
+  </context-param>
 
   <context-param>
     <param-name>quartz:config-file</param-name>
@@ -35,7 +35,7 @@
   </listener>
 
   <servlet>
-    <servlet-name>MainServlet</servlet-name>
+    <servlet-name>MyUIServlet</servlet-name>
     <servlet-class>com.vaadin.server.VaadinServlet</servlet-class>
     <init-param>
       <param-name>UI</param-name>
@@ -43,7 +43,7 @@
     </init-param>
   </servlet>
   <servlet-mapping>
-    <servlet-name>MainServlet</servlet-name>
+    <servlet-name>MyUIServlet</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
 
