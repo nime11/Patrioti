@@ -36,7 +36,6 @@ public class MuTableLayout extends HorizontalLayout implements View{
             ds.addAll(clanArrayList);
             Object[] pids = ds.getContainerPropertyIds().toArray();
 
-            System.out.println(Arrays.toString(pids));
 
             Grid grid = new Grid("IGRALCI", ds);
             grid.setWidth("100%");

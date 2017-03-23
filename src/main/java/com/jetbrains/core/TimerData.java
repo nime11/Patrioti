@@ -25,7 +25,6 @@ public class TimerData implements org.quartz.Job {
     public TimerData() throws SchedulerException, InterruptedException {
         sched.scheduleJob(job, trigger);
         sched.start();
-        Thread.sleep(90L * 1000L);
         sched.shutdown(true);
     }
     // define the job and tie it to our HelloJob class

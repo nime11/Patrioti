@@ -11,13 +11,9 @@ import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 
-
-
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Calendar;
-
 
 import static java.util.Objects.requireNonNull;
 import static org.quartz.JobBuilder.newJob;
@@ -83,15 +79,16 @@ public class MyUI extends UI{
         cal.setTime(new Date()); // sets calendar time/date
         int i=cal.get(Calendar.HOUR_OF_DAY);
         int h=0;
-        if(i>=8) {
-            h = 24 - i + 8;
+        if(i>=7) {
+            h = 24 - i + 7;
         }
         else {
-             h = 8-i;
+             h = 7-i;
         }
+        int m= 60-cal.get(Calendar.MINUTE)-5;
         cal.add(Calendar.HOUR_OF_DAY, h); // adds one hour
-        cal.add(Calendar.MINUTE ,2); // adds one hour
-        System.out.println("time: "+ cal.getTime());
+        cal.add(Calendar.MINUTE ,m); // adds one hour
+
 
         requireNonNull(scheduler);
 

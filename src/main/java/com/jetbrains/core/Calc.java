@@ -10,10 +10,8 @@ import java.util.Calendar;
 public class Calc {
     public static void main (String[] args) {
       ArrayList<Progres> test = Napr();
-        System.out.println(test.get(0).toString());
 
     }
-
     public  static  ArrayList Napr(){
         Date dans = Date.valueOf("2017-02-11");
         Date now = Date.valueOf("2017-03-19");
@@ -27,7 +25,6 @@ public class Calc {
         o.setTime(now);
         o.add(Calendar.DATE, 0);
         Date ofevent = new java.sql.Date((o.getTime().getTime()));
-        System.out.println(beforeevent);
 
         ArrayList<Clan> clanArrTODAY = GetData.GetArry(ofevent);
         ArrayList<Clan> clanArrBefore = GetData.GetArry(beforeevent);

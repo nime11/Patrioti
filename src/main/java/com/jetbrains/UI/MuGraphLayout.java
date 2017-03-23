@@ -9,19 +9,23 @@ import com.vaadin.addon.charts.model.style.Style;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.ui.HorizontalLayout;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by lenart on 21. 03. 2017.
  */
 public class MuGraphLayout extends HorizontalLayout {
-    Date dans = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+    Date dans = new java.util.Date();
+    Calendar c = Calendar.getInstance();
     public MuGraphLayout(){
-        dans = Date.valueOf("2017-03-19");
-        ArrayList<Clan> clanArrayList = GetData.GetArry(dans);
+        c.setTime(dans);
+        c.add(Calendar.DATE, -1);
+        java.sql.Date yesterday = new java.sql.Date( c.getTime().getTime());
+
+        ArrayList<Clan> clanArrayList = GetData.GetArry(yesterday);
 
         Chart chartTotaldmg = new Chart(ChartType.PIE);
         chartTotaldmg.setWidth("400px");
@@ -121,14 +125,14 @@ public class MuGraphLayout extends HorizontalLayout {
 
 
         YAxis primary = new YAxis();
-        primary.setTitle("totaldmg");
+        primary.setTitle("Moč");
         Style style = new Style();
         style.setColor(SolidColor.RED);
         primary.getTitle().setStyle(style);
         conf.addyAxis(primary);
 
         YAxis snd = new YAxis();
-        snd.setTitle("Moč");
+        snd.setTitle("Totaldmg");
         snd.setOpposite(true);
         style = new Style();
         style.setColor(new SolidColor("#4572A7"));
