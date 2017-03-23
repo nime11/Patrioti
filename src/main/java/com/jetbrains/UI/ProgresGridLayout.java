@@ -58,18 +58,14 @@ public class ProgresGridLayout extends HorizontalLayout  {
        filter.setNumberFilter("id");
 
         // simple filters
-       filter.setTextFilter("ime", true, true);
-       filter.setNumberFilter("inteligenca");
-       filter.setNumberFilter("kopensk_rank");
-       filter.setNumberFilter("morski_rank");
-       filter.setNumberFilter("moč");
-       filter.setNumberFilter("totaldmg");
+       filter.setTextFilter("ime", true, false);
+       filter.setNumberFilter("inteligenca","smallest", "biggest");
+       filter.setNumberFilter("kopensk_rank","smallest", "biggest");
+       filter.setNumberFilter("morski_rank","smallest", "biggest");
+       filter.setNumberFilter("moč","smallest", "biggest");
+       filter.setNumberFilter("totaldmg","smallest", "biggest");
 
 
-       new Button("clearAllFilters", (Button.ClickListener) event -> filter.clearAllFilters());
-
-       filter.addCellFilterChangedListener((CellFilterChangedListener) cellFilter ->
-               Notification.show("cellFilter changed " +  Notification.Type.TRAY_NOTIFICATION));
 
        // Freeze two first columns
        grid.setFrozenColumnCount(2);
